@@ -24,6 +24,7 @@ If you wish to require a player to have a phone item in their inventory, you mus
     "identifierColumn": "citizenid",
   },
   ```
+3. Navigate to the `config.lua` in `qbx-npwd` and verify all the items you want to work as a phone are listed.
 
 ## Other Features
 1. Double clicking any phone items in the inventory will open the phone. If you want to be able to drag and drop phone items over the Use button in the inventory, you must navigate to `qb-core/shared/items.lua`, find your phone item, and change `usable` to `true` and `shouldClose` to `true`.
