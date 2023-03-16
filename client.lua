@@ -11,7 +11,7 @@ local function DoPhoneCheck(isUnload)
     local items = exports.ox_inventory:Search('count', Config.PhoneList)
 
     if type(items) == 'number' then
-        hasPhone = items > 0 and true
+        hasPhone = items > 0
     else
         for _, v in pairs(items) do
             if v > 0 then
