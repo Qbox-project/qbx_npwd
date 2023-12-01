@@ -33,7 +33,7 @@
       "imageEncoding": "webp",
       "contentType": "multipart/form-data",
       "useContentType": false,
-      "useWebhook": false, //true = using webhook on discord, for example -- found on PE discord (https://projecterror.dev/docs/npwd/start/installation/#discord)
+      "useWebhook": false,
       "authorizationHeader": "Authorization",
       "authorizationPrefix": "",
       "useAuthorization": true,
