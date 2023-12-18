@@ -45,7 +45,7 @@
       "sentryEnabled": true
     },
     "browser": {
-      "homepageUrl": "https://docs.fivemanage.com"
+      "homepageUrl": "https://docs.qbox.re"
     },
     "defaultContacts": [],
     "disabledApps": [ "BROWSER" ],
