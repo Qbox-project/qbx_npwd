@@ -1,4 +1,3 @@
-local QBCore = exports['qb-core']:GetCoreObject()
 local currentResourceName = GetCurrentResourceName()
 local debugIsEnabled = GetConvarInt(('%s-debug'):format(currentResourceName), 0) == 1
 
@@ -44,7 +43,7 @@ AddEventHandler('onServerResourceStart', function(resName)
     if resName ~= currentResourceName then return end
 
     debugPrint('Launched with debug mode on')
-    local players = QBCore.Functions.GetQBPlayers()
+    local players = exports.qbx_core:GetQBPlayers()
 
     for _, v in pairs(players) do
         exports.npwd:newPlayer({
@@ -57,6 +56,6 @@ AddEventHandler('onServerResourceStart', function(resName)
     end
 end)
 
-QBCore.Functions.CreateUseableItem(Config.PhoneList, function(source)
+exports.qbx_core:CreateUseableItem(Config.PhoneList, function(source)
     TriggerClientEvent('qbx-npwd:client:setPhoneVisible', source, true)
 end)
