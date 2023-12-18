@@ -42,7 +42,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
 end)
 
 -- Handles state when PlayerData is changed. We're just looking for inventory updates.
-RegisterNetEvent('QBCore:Player:SetPlayerData', function(PlayerData)
+RegisterNetEvent('QBCore:Player:SetPlayerData', function()
     DoPhoneCheck()
 end)
 
