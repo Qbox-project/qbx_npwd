@@ -44,9 +44,12 @@
       "enabled": true,
       "sentryEnabled": true
     },
+    "browser": {
+      "homepageUrl": "https://docs.qbox.re"
+    },
     "defaultContacts": [],
     "disabledApps": [ "BROWSER" ],
-    "apps": [ "npwd_qbx_mail", "npwd_qbx_garage" ],
+    "apps": [],
     "voiceMessage": {
       "enabled": true,
       "authorizationHeader": "Authorization",
