@@ -1,6 +1,6 @@
 local hasPhone = false
 
-local function DoPhoneCheck(isUnload)
+local function doPhoneCheck(isUnload)
     hasPhone = false
 
     if isUnload then
@@ -8,7 +8,7 @@ local function DoPhoneCheck(isUnload)
         return
     end
 
-    local items = exports.ox_inventory:Search('count', Config.PhoneList)
+    local items = exports.ox_inventory:Search('count', PhoneList)
 
     if type(items) == 'number' then
         hasPhone = items > 0
@@ -24,36 +24,34 @@ local function DoPhoneCheck(isUnload)
     exports.npwd:setPhoneDisabled(not hasPhone)
 end
 
-local function HasPhone()
+exports("HasPhone", function()
     return hasPhone
-end
-
-exports("HasPhone", HasPhone)
+end)
 
 -- Handles state right when the player selects their character and location.
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-    DoPhoneCheck()
+    doPhoneCheck()
 end)
 
 -- Resets state on logout, in case of character change.
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
-    DoPhoneCheck(true)
-    TriggerServerEvent("qbx-npwd:server:UnloadPlayer")
+    doPhoneCheck(true)
+    TriggerServerEvent('qbx_npwd:server:UnloadPlayer')
 end)
 
 -- Handles state when PlayerData is changed. We're just looking for inventory updates.
 RegisterNetEvent('QBCore:Player:SetPlayerData', function(PlayerData)
-    DoPhoneCheck()
+    doPhoneCheck()
 end)
 
 -- Handles state if resource is restarted live.
 AddEventHandler('onResourceStart', function(resource)
     if GetCurrentResourceName() ~= resource or GetResourceState('npwd') ~= 'started' then return end
 
-    DoPhoneCheck()
+    doPhoneCheck()
 end)
 
 -- Allows use of phone as an item.
-RegisterNetEvent('qbx-npwd:client:setPhoneVisible', function(isPhoneVisible)
+RegisterNetEvent('qbx_npwd:client:setPhoneVisible', function(isPhoneVisible)
     exports.npwd:setPhoneVisible(isPhoneVisible)
 end)
