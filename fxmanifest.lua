@@ -3,6 +3,7 @@ game 'gta5'
 
 description 'A simple bridge resource for Qbox Compatibility for NPWD'
 version '1.0.0'
+repository 'https://github.com/Qbox-Project/qbx_npwd'
 
 client_script 'client.lua'
 
