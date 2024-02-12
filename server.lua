@@ -1,6 +1,7 @@
+lib.versionCheck('Qbox-project/qbx_npwd')
+
 local currentResourceName = GetCurrentResourceName()
 local debugIsEnabled = GetConvarInt(('%s-debug'):format(currentResourceName), 0) == 1
-lib.versionCheck('Qbox-project/qbx_npwd')
 
 local function debugPrint(...)
     if not debugIsEnabled then return end
