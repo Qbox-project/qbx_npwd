@@ -39,10 +39,12 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
     TriggerServerEvent('qbx_npwd:server:UnloadPlayer')
 end)
 
--- Handles state when PlayerData is changed. We're just looking for inventory updates.
-RegisterNetEvent('QBCore:Player:SetPlayerData', function()
-    doPhoneCheck()
+AddEventHandler('ox_inventory:itemCount', function(itemName, totalCount)
+    if itemName == "phone" then
+        doPhoneCheck()
+    end
 end)
+
 
 -- Handles state if resource is restarted live.
 AddEventHandler('onResourceStart', function(resource)
